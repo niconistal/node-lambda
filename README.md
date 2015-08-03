@@ -80,6 +80,7 @@ $ node-lambda deploy --help
   Options:
 
     -h, --help                        output usage information
+    -p, --path                        Path to the function zip file
     -e, --environment [staging]       Choose environment {development, staging, production}
     -a, --accessKey [your_key]        AWS Access Key
     -s, --secretKey [your_secret]     AWS Secret Key

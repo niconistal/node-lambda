@@ -21,11 +21,13 @@ var AWS_TIMEOUT = process.env.AWS_TIMEOUT || 60;
 var AWS_DESCRIPTION = process.env.AWS_DESCRIPTION || '';
 var AWS_RUNTIME = process.env.AWS_RUNTIME || 'nodejs';
 var AWS_FUNCTION_VERSION = process.env.AWS_FUNCTION_VERSION || '';
+var FUNCTION_PATH = process.env.FUNCTION_PATH || '';
 
 program
   .version(lambda.version)
   .command('deploy')
   .description('Deploy your application to Amazon Lambda')
+  .option('-p --functionPath [' + FUNCTION_PATH + ']', 'Specify function .zip path', FUNCTION_PATH)
   .option('-e, --environment [' + AWS_ENVIRONMENT + ']', 'Choose environment {dev, staging, production}',
     AWS_ENVIRONMENT)
   .option('-a, --accessKey [' + AWS_ACCESS_KEY_ID + ']', 'AWS Access Key', AWS_ACCESS_KEY_ID)
